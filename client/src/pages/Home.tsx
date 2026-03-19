@@ -58,10 +58,17 @@ export default function Home() {
                 Hương vị biển cả đậm đà, quy trình chế biến thủ công tỉ mỉ, và tình yêu với thực phẩm được kế thừa qua từng thế hệ.
               </p>
               <div className="flex gap-4">
-                <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                <Button 
+                  onClick={() => document.getElementById('dishes')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                >
                   Khám Phá Ngay
                 </Button>
-                <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
+                <Button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="outline" 
+                  className="border-secondary text-secondary hover:bg-secondary/10"
+                >
                   Liên Hệ
                 </Button>
               </div>
@@ -278,7 +285,10 @@ export default function Home() {
               </div>
             </div>
 
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-base">
+            <Button 
+              onClick={() => window.location.href = 'tel:0986679556'}
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-base"
+            >
               Liên Hệ Ngay
             </Button>
           </div>
