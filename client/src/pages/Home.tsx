@@ -2,7 +2,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useState } from 'react';
 import { Streamdown } from 'streamdown';
 import { Button } from '@/components/ui/button';
-import { ChefHat, Leaf, Flame, X } from 'lucide-react';
+import { ChefHat, Leaf, Flame, X, Phone } from 'lucide-react';
 
 /**
  * Design Philosophy: Coastal Heritage
@@ -289,31 +289,31 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
                 onClick={() => window.location.href = 'tel:0986679556'}
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-4 py-3 text-2xl"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-4 py-3 text-2xl rounded-full w-14 h-14 flex items-center justify-center"
                 title="Gọi Điện Thoại"
               >
-                📄
+                <Phone className="w-6 h-6" />
               </Button>
               <Button 
                 onClick={() => window.open('https://zalo.me/0986679556', '_blank')}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 text-2xl"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 text-2xl rounded-full w-14 h-14 flex items-center justify-center"
                 title="Zalo"
               >
-                📱
+                <span className="text-lg font-bold">Z</span>
               </Button>
               <Button 
                 onClick={() => window.open('https://wa.me/0986679556', '_blank')}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-2xl"
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-2xl rounded-full w-14 h-14 flex items-center justify-center"
                 title="WhatsApp"
               >
-                📲
+                <span className="text-lg font-bold">W</span>
               </Button>
               <Button 
                 onClick={() => window.open('https://www.facebook.com/profile.php?id=100089317447444', '_blank')}
-                className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-3 text-2xl"
+                className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-3 text-2xl rounded-full w-14 h-14 flex items-center justify-center"
                 title="Facebook"
               >
-                f
+                <span className="text-lg font-bold">f</span>
               </Button>
             </div>
           </div>
