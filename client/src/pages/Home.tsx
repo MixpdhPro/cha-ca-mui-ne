@@ -1,3 +1,4 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Streamdown } from 'streamdown';
 import { Button } from '@/components/ui/button';
 import { ChefHat, Leaf, Flame } from 'lucide-react';
@@ -12,10 +13,14 @@ import { ChefHat, Leaf, Flame } from 'lucide-react';
  */
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const heroImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_hero_banner-LYy7KLHqaQPZhJcFCchYaG.webp";
   const processImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_process-ny7JkwLdYZAMbMgVapV5zx.webp";
   const ingredientsImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_ingredients-oRA3QwhXDR44g3TsUmAv3p.webp";
-  const dishImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_dish-LgVZAPKqwL7rC3iCQoX4VJ.webp";
+  const dishImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_dish_real_7550f6e8.webp";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -229,8 +234,8 @@ export default function Home() {
                 </div>
                 <h4 className="font-semibold mb-2">Địa Chỉ</h4>
                 <p className="text-sm text-muted-foreground">
-                  Mũi Né, Phan Thiết<br />
-                  Bình Thuận, Việt Nam
+                  6/14 Nguyễn Thanh Hùng<br />
+                  Phường Mũi Né, Tỉnh Lâm Đồng
                 </p>
               </div>
               <div className="p-6 bg-muted/50 rounded-lg border border-border">
@@ -239,18 +244,20 @@ export default function Home() {
                 </div>
                 <h4 className="font-semibold mb-2">Điện Thoại</h4>
                 <p className="text-sm text-muted-foreground">
-                  +84 (0) XXX XXX XXX<br />
-                  Hỗ trợ 24/7
+                  0986679556<br />
+                  Hỗ trợ hàng ngày
                 </p>
               </div>
               <div className="p-6 bg-muted/50 rounded-lg border border-border">
                 <div className="text-secondary mb-3">
                   <Flame className="w-8 h-8 mx-auto" />
                 </div>
-                <h4 className="font-semibold mb-2">Website</h4>
+                <h4 className="font-semibold mb-2">Facebook</h4>
                 <p className="text-sm text-muted-foreground">
-                  www.chacamuine.vn<br />
-                  Fanpage: Chả Cá Mũi Né
+                  <a href="https://www.facebook.com/profile.php?id=100089317447444" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                    Fanpage Chả Cá Mũi Né
+                  </a><br />
+                  Theo dõi để cập nhật
                 </p>
               </div>
             </div>
