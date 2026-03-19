@@ -2,7 +2,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useState } from 'react';
 import { Streamdown } from 'streamdown';
 import { Button } from '@/components/ui/button';
-import { ChefHat, Leaf, Flame, X, Phone } from 'lucide-react';
+import { ChefHat, Leaf, Flame, X, Phone, MapPin, MessageCircle, Facebook } from 'lucide-react';
 
 /**
  * Design Philosophy: Coastal Heritage
@@ -254,7 +254,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-muted/50 rounded-lg border border-border">
                 <div className="text-secondary mb-3">
-                  <ChefHat className="w-8 h-8 mx-auto" />
+                  <MapPin className="w-8 h-8 mx-auto" />
                 </div>
                 <h4 className="font-semibold mb-2">Địa Chỉ</h4>
                 <p className="text-sm text-muted-foreground">
@@ -264,24 +264,45 @@ export default function Home() {
               </div>
               <div className="p-6 bg-muted/50 rounded-lg border border-border">
                 <div className="text-secondary mb-3">
-                  <Leaf className="w-8 h-8 mx-auto" />
+                  <Phone className="w-8 h-8 mx-auto" />
                 </div>
                 <h4 className="font-semibold mb-2">Điện Thoại</h4>
-                <p className="text-sm text-muted-foreground">
+                <button 
+                  onClick={() => window.location.href = 'tel:0986679556'}
+                  className="text-sm text-secondary hover:underline font-semibold"
+                >
                   0986679556<br />
-                  Hỗ trợ hàng ngày
-                </p>
+                  Gọi Ngay
+                </button>
               </div>
               <div className="p-6 bg-muted/50 rounded-lg border border-border">
-                <div className="text-secondary mb-3">
-                  <Flame className="w-8 h-8 mx-auto" />
+                <div className="text-secondary mb-3 flex gap-3 justify-center">
+                  <button
+                    onClick={() => window.open('https://zalo.me/0986679556', '_blank')}
+                    title="Zalo"
+                    className="text-blue-600 hover:text-blue-700 transition-colors"
+                  >
+                    <MessageCircle className="w-8 h-8" />
+                  </button>
+                  <button
+                    onClick={() => window.open('https://www.facebook.com/profile.php?id=100089317447444', '_blank')}
+                    title="Facebook"
+                    className="text-blue-800 hover:text-blue-900 transition-colors"
+                  >
+                    <Facebook className="w-8 h-8" />
+                  </button>
+                  <button
+                    onClick={() => window.open('https://wa.me/0986679556', '_blank')}
+                    title="WhatsApp"
+                    className="text-green-600 hover:text-green-700 transition-colors"
+                  >
+                    <MessageCircle className="w-8 h-8" />
+                  </button>
                 </div>
-                <h4 className="font-semibold mb-2">Facebook</h4>
+                <h4 className="font-semibold mb-2">Kết Nối Với Chúng Tôi</h4>
                 <p className="text-sm text-muted-foreground">
-                  <a href="https://www.facebook.com/profile.php?id=100089317447444" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
-                    Fanpage Chả Cá Mũi Né
-                  </a><br />
-                  Theo dõi để cập nhật
+                  Zalo, Facebook, WhatsApp<br />
+                  Liên lạc ngay
                 </p>
               </div>
             </div>
