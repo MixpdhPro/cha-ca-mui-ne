@@ -1,7 +1,8 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useState } from 'react';
 import { Streamdown } from 'streamdown';
 import { Button } from '@/components/ui/button';
-import { ChefHat, Leaf, Flame } from 'lucide-react';
+import { ChefHat, Leaf, Flame, X } from 'lucide-react';
 
 /**
  * Design Philosophy: Coastal Heritage
@@ -16,6 +17,7 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const [selectedDish, setSelectedDish] = useState<{ name: string; desc: string; details: string } | null>(null);
 
   const heroImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_hero_banner-LYy7KLHqaQPZhJcFCchYaG.webp";
   const processImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_process-ny7JkwLdYZAMbMgVapV5zx.webp";
@@ -203,10 +205,15 @@ export default function Home() {
                       desc: "Chả cá kho cùng tiêu xanh, ớt và nước mắm, ăn với cơm nóng rất bắt vị." 
                     }
                   ].map((dish) => (
-                    <div key={dish.name} className="p-4 bg-background rounded-lg border border-border hover:border-secondary transition-colors">
+                    <button
+                      key={dish.name}
+                      onClick={() => setSelectedDish({ ...dish, details: `${dish.name} là một trong những món ăn đặc sắc nhất của Chả Cá Mũi Né. Với hương vị độc đáo và cách chế biến truyền thống, đây là lựa chọn hoàn hảo cho những ai yêu thích ẩm thực Việt Nam.` })}
+                      className="p-4 bg-background rounded-lg border border-border hover:border-secondary hover:bg-muted/50 transition-all cursor-pointer text-left"
+                    >
                       <h4 className="font-semibold text-foreground mb-2">{dish.name}</h4>
                       <p className="text-sm text-muted-foreground">{dish.desc}</p>
-                    </div>
+                      <p className="text-xs text-secondary mt-2">Nhấp để xem chi tiết →</p>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -268,6 +275,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Dish Detail Modal */}
+      {selectedDish && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background rounded-lg shadow-lg max-w-md w-full p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold text-foreground">{selectedDish.name}</h3>
+              <button
+                onClick={() => setSelectedDish(null)}
+                className="p-1 hover:bg-muted rounded-lg transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <p className="text-muted-foreground">{selectedDish.desc}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{selectedDish.details}</p>
+            <div className="flex gap-3 pt-4">
+              <Button
+                onClick={() => setSelectedDish(null)}
+                variant="outline"
+                className="flex-1"
+              >
+                Đóng
+              </Button>
+              <Button className="flex-1 bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                Gọi Đặt Hàng: 0986679556
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="border-t border-border bg-muted/30 py-8">
