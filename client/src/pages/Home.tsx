@@ -34,6 +34,7 @@ export default function Home() {
             <h1 className="text-xl font-bold text-foreground">Chả Cá Mũi Né</h1>
           </div>
           <nav className="hidden md:flex gap-6">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-sm hover:text-secondary transition-colors">Trang Chủ</button>
             <a href="#origin" className="text-sm hover:text-secondary transition-colors">Nguồn Gốc</a>
             <a href="#process" className="text-sm hover:text-secondary transition-colors">Quy Trình</a>
             <a href="#dishes" className="text-sm hover:text-secondary transition-colors">Món Ăn</a>
@@ -285,12 +286,58 @@ export default function Home() {
               </div>
             </div>
 
-            <Button 
-              onClick={() => window.location.href = 'tel:0986679556'}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-6 text-base"
-            >
-              Liên Hệ Ngay
-            </Button>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button 
+                onClick={() => window.location.href = 'tel:0986679556'}
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3"
+              >
+                📄 Gọi Điện Thoại
+              </Button>
+              <Button 
+                onClick={() => window.open('https://zalo.me/0986679556', '_blank')}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3"
+              >
+                📱 Zalo
+              </Button>
+              <Button 
+                onClick={() => window.open('https://wa.me/0986679556', '_blank')}
+                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3"
+              >
+                📲 WhatsApp
+              </Button>
+              <Button 
+                onClick={() => window.open('https://www.facebook.com/profile.php?id=100089317447444', '_blank')}
+                className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3"
+              >
+                f Facebook
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Map Section */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container">
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <p className="text-secondary font-accent text-sm uppercase tracking-widest">Vị Trí</p>
+              <h2 className="text-3xl md:text-4xl font-bold">Tìm Chúng Tôi Trên Bản Đồ</h2>
+            </div>
+            <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border border-border">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen={true}
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.0823456789!2d108.0!3d11.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31755d3b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2zQ2jDo0EgQ8OhIE3Dui0gTkU!5e0!3m2!1svi!2s!4v1234567890"
+              />
+            </div>
+            <p className="text-center text-muted-foreground">
+              6/14 Nguyễn Thanh Hùng, Phường Mũi Né, Tỉnh Lâm Đồng
+            </p>
           </div>
         </div>
       </section>
