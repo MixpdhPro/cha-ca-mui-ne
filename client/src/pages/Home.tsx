@@ -17,7 +17,7 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
-  const [selectedDish, setSelectedDish] = useState<{ name: string; desc: string; details: string } | null>(null);
+  const [selectedDish, setSelectedDish] = useState<{ name: string; desc: string; details: string; image?: string } | null>(null);
 
   const heroImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_hero_banner-LYy7KLHqaQPZhJcFCchYaG.webp";
   const processImageUrl = "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_process-ny7JkwLdYZAMbMgVapV5zx.webp";
@@ -190,28 +190,37 @@ export default function Home() {
                   {[
                     { 
                       name: "Bún Chả Cá", 
-                      desc: "Món ăn đặc trưng với nước dùng ngọt thanh, chả cá dai ngon, ăn kèm rau sống và ớt tươi." 
+                      desc: "Món ăn đặc trưng với nước dùng ngọt thanh, chả cá dai ngon, ăn kèm rau sống và ớt tươi.",
+                      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/bun_cha_ca-H4jF5Qaz6nzfiPyWvEMSjN.webp",
+                      details: "Bún Chả Cá là món ăn truyền thống của Mũi Né, nổi tiếng với hương vị độc đáo. Nước dùng được nấu từ xương cá tươi, tạo nên vị ngọt thanh tự nhiên. Chả cá được nướng trên than hoa, có lớp vỏ ngoài giòn, bên trong mềm ngon. Ăn kèm với bún tươi, rau sống (rau cải, dill, bạc hà) tạo nên sự hòa quyện tuyệt vời."
                     },
                     { 
                       name: "Bánh Mì Chả Cá", 
-                      desc: "Chả cá chiên kẹp trong bánh mì nóng giòn, thêm chút rau dưa và tương ớt." 
+                      desc: "Chả cá chiên kẹp trong bánh mì nóng giòn, thêm chút rau dưa và tương ớt.",
+                      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/banh_mi_cha_ca-d5kdVN6xBR7gwuynfr3CGU.webp",
+                      details: "Bánh Mì Chả Cá là sự kết hợp hoàn hảo giữa bánh mì giòn và chả cá nướng thơm. Bánh mì được nướng nóng, giòn tan, bên trong mềm. Chả cá được cắt thành những miếng vừa vặn, chiên vàng ơ. Kèm theo là rau dưa chua ngon, tương ớt cay nồng, tạo nên một bữa ăn nhanh gọn nhưng rất thỏa mãn."
                     },
                     { 
                       name: "Lẩu Chả Cá", 
-                      desc: "Nước lẩu đậm đà, chả cá tươi ngon, ăn kèm các loại rau và nấm." 
+                      desc: "Nước lẩu đậm đà, chả cá tươi ngon, ăn kèm các loại rau và nấm.",
+                      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/lau_cha_ca-KvVPtUPuqDtCX4AwPNcupM.webp",
+                      details: "Lẩu Chả Cá là món ăn lý tưởng cho những bữa ăn tập thể. Nước lẩu được nấu từ xương cá, tôm, cua, tạo nên vị đậm đà, béo ngậy. Chả cá tươi được cắt thành lát mỏng, chín nhanh khi nhúng vào nước lẩu. Ăn kèm với rau xanh (bạc hà, dill, rau cải), nấm, tofu, tạo nên một bữa ăn vừa ngon vừa bổ dưỡng."
                     },
                     { 
                       name: "Chả Cá Kho Tiêu", 
-                      desc: "Chả cá kho cùng tiêu xanh, ớt và nước mắm, ăn với cơm nóng rất bắt vị." 
+                      desc: "Chả cá kho cùng tiêu xanh, ớt và nước mắm, ăn với cơm nóng rất bắt vị.",
+                      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663450626883/V8kgNLLTxsY5sNt4BbUMm7/cha_ca_kho_tieu-W6jG56bCCtSutGb8ypGPWU.webp",
+                      details: "Chả Cá Kho Tiêu là món ăn cơm truyền thống, hương vị cay nồng, kích thích vị giác. Chả cá được kho với tiêu xanh, ớt tươi, nước mắm cá, tạo nên vị cay nồng đặc trưng. Kho được nấu chậm để chả cá thấm đều gia vị, vị kho sâu sắc. Ăn với cơm nóng, rau sống, tạo nên một bữa ăn đơn giản nhưng rất bắt vị."
                     }
                   ].map((dish) => (
                     <button
                       key={dish.name}
-                      onClick={() => setSelectedDish({ ...dish, details: `${dish.name} là một trong những món ăn đặc sắc nhất của Chả Cá Mũi Né. Với hương vị độc đáo và cách chế biến truyền thống, đây là lựa chọn hoàn hảo cho những ai yêu thích ẩm thực Việt Nam.` })}
-                      className="p-4 bg-background rounded-lg border border-border hover:border-secondary hover:bg-muted/50 transition-all cursor-pointer text-left"
+                      onClick={() => setSelectedDish(dish)}
+                      className="p-4 bg-background rounded-lg border border-border hover:border-secondary hover:bg-muted/50 transition-all cursor-pointer text-left overflow-hidden"
                     >
+                      <img src={dish.image} alt={dish.name} className="w-full h-32 object-cover rounded-lg mb-3" />
                       <h4 className="font-semibold text-foreground mb-2">{dish.name}</h4>
-                      <p className="text-sm text-muted-foreground">{dish.desc}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">{dish.desc}</p>
                       <p className="text-xs text-secondary mt-2">Nhấp để xem chi tiết →</p>
                     </button>
                   ))}
@@ -279,7 +288,7 @@ export default function Home() {
       {/* Dish Detail Modal */}
       {selectedDish && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-background rounded-lg shadow-lg max-w-md w-full p-6 space-y-4">
+          <div className="bg-background rounded-lg shadow-lg max-w-md w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between">
               <h3 className="text-2xl font-bold text-foreground">{selectedDish.name}</h3>
               <button
@@ -289,7 +298,10 @@ export default function Home() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-muted-foreground">{selectedDish.desc}</p>
+            {selectedDish.image && (
+              <img src={selectedDish.image} alt={selectedDish.name} className="w-full h-48 object-cover rounded-lg" />
+            )}
+            <p className="text-muted-foreground font-semibold">{selectedDish.desc}</p>
             <p className="text-sm text-muted-foreground leading-relaxed">{selectedDish.details}</p>
             <div className="flex gap-3 pt-4">
               <Button
