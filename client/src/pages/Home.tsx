@@ -289,27 +289,31 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
                 onClick={() => window.location.href = 'tel:0986679556'}
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 text-base font-semibold"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-4 py-3 text-2xl"
+                title="Gọi Điện Thoại"
               >
-                📄 Gọi Điện Thoại
+                📄
               </Button>
               <Button 
                 onClick={() => window.open('https://zalo.me/0986679556', '_blank')}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-semibold"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 text-2xl"
+                title="Zalo"
               >
-                📱 Zalo
+                📱
               </Button>
               <Button 
                 onClick={() => window.open('https://wa.me/0986679556', '_blank')}
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-base font-semibold"
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 text-2xl"
+                title="WhatsApp"
               >
-                📲 WhatsApp
+                📲
               </Button>
               <Button 
                 onClick={() => window.open('https://www.facebook.com/profile.php?id=100089317447444', '_blank')}
-                className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 text-base font-semibold"
+                className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-3 text-2xl"
+                title="Facebook"
               >
-                f Facebook
+                f
               </Button>
             </div>
           </div>
