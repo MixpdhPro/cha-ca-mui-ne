@@ -249,63 +249,7 @@ export default function Home() {
               <p className="text-muted-foreground">
                 Để thưởng thức Chả Cá Mũi Né "Nhiên Trần" chính gốc, quý khách có thể liên hệ với chúng tôi qua các kênh dưới đây.
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 bg-muted/50 rounded-lg border border-border">
-                <div className="text-secondary mb-3">
-                  <MapPin className="w-8 h-8 mx-auto" />
-                </div>
-                <h4 className="font-semibold mb-2">Địa Chỉ</h4>
-                <p className="text-sm text-muted-foreground">
-                  6/14 Nguyễn Thanh Hùng<br />
-                  Phường Mũi Né, Tỉnh Lâm Đồng
-                </p>
-              </div>
-              <div className="p-6 bg-muted/50 rounded-lg border border-border">
-                <div className="text-secondary mb-3">
-                  <Phone className="w-8 h-8 mx-auto" />
-                </div>
-                <h4 className="font-semibold mb-2">Điện Thoại</h4>
-                <button 
-                  onClick={() => window.location.href = 'tel:0986679556'}
-                  className="text-sm text-secondary hover:underline font-semibold"
-                >
-                  0986679556<br />
-                  Gọi Ngay
-                </button>
-              </div>
-              <div className="p-6 bg-muted/50 rounded-lg border border-border">
-                <div className="text-secondary mb-3 flex gap-3 justify-center">
-                  <button
-                    onClick={() => window.open('https://zalo.me/0986679556', '_blank')}
-                    title="Zalo"
-                    className="text-blue-600 hover:text-blue-700 transition-colors"
-                  >
-                    <MessageCircle className="w-8 h-8" />
-                  </button>
-                  <button
-                    onClick={() => window.open('https://www.facebook.com/profile.php?id=100089317447444', '_blank')}
-                    title="Facebook"
-                    className="text-blue-800 hover:text-blue-900 transition-colors"
-                  >
-                    <Facebook className="w-8 h-8" />
-                  </button>
-                  <button
-                    onClick={() => window.open('https://wa.me/0986679556', '_blank')}
-                    title="WhatsApp"
-                    className="text-green-600 hover:text-green-700 transition-colors"
-                  >
-                    <MessageCircle className="w-8 h-8" />
-                  </button>
-                </div>
-                <h4 className="font-semibold mb-2">Kết Nối Với Chúng Tôi</h4>
-                <p className="text-sm text-muted-foreground">
-                  Zalo, Facebook, WhatsApp<br />
-                  Liên lạc ngay
-                </p>
-              </div>
-            </div>
+                        </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
