@@ -359,11 +359,7 @@ export default function Home() {
                 referrerPolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.0!2d108.2830354!3d10.935157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31768fbb5b9bea93%3A0x3ab73afef7899851!2zQ2jDo0EgQ8OhIE3Dui0gTkU!5e0!3m2!1svi!2svi!4v1679123456789"
               />
-            </div>
-            <p className="text-center text-muted-foreground">
-              6/14 Nguyễn Thanh Hùng, Phường Mũi Né, Tỉnh Lâm Đồng
-            </p>
-          </div>
+            
         </div>
       </section>
 
